@@ -1,17 +1,21 @@
--- currently under development --
+**this repository is currently under development**
 
-Add app name to settings.py
+Add app name to settings.py;
 
-INSTALLED_APPS = (
+.. code-block:: python
 
-	...
+	INSTALLED_APPS = (
 
-	'notifications',
+		...
 
-)
+		'notifications',
 
-call send_notification function
+	)
 
-from notifications.notify import send_notification
-send_notification(actor=actor, action=action_object, verb="", recipients=[], target=target)
+call send_notification function;
+
+.. code-block:: python
+
+    from notifications.notify import send_notification
+    send_notification(actor=actor, action=action_object, verb="", recipients=[], target=target)
 
