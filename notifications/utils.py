@@ -1,53 +1,35 @@
 
-from django.conf import settings
+import settings as app_settings
 
-from constants import LEVELS
+from constants import BASIC, NO_TARGET
 
 
 available_backends = ["database",]
 
 
 def get_format(action):
-
 	"""
+
 		find the suitable display format for the given action instance
-	"""
 
+	"""
 	if action.target:
-		return settings.FORMATS.get(LEVELS.BASIC, LEVELS.DEFAULT)
+		return app_settings.NOTIFICATION_FORMATS[BASIC]
 
-	return settings.FORMATS.get(LEVELS.NO_TARGET, LEVELS.DEFAULT)
-
-
-def send_notification(action, receivers):
-	pass
+	return app_settings.NOTIFICATION_FORMATS[NO_TARGET]
 
 
-def action(**kwargs):
+def send_notification_from_action(action, recepients):
+	
+	from models import Notification
 
-	"""
+	for recepient in recepients:
 
-		creates a new action
-
-		if NOTIFY_ON_ACTION is enabled,
-		sends notification to recipient list
-
-	"""
-
-	from models import Action
-
-	Action.objects.new_action(**kwargs)
-
-	if settings.NOTIFY_ON_ACTION:
-		send_notification(action, receivers)
+		Notification.objects.create()
 
 
 def _get_backend():
-
-	value = settings.NOTIFICATIONS.get("backend", "database")
-
-	if not value in available_backends:
-		raise Exception("Invalid backend value.")
+	pass
 
 
 
