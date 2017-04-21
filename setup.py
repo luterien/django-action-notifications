@@ -11,13 +11,13 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-action-notifications',
-    version='0.2',
-    packages=["notifications",],
+    version='0.2.0',
+    packages=find_packages(),
     include_package_data=True,
-    license='BSD License',
+    license='MIT',
     description='Reusable Django app to save user actions & send them notifications.',
     long_description=README,
-    url='https://github.com/luterien/django-action-notifications/tree/master',
+    url='https://github.com/luterien/django-action-notifications',
     author=u'Uğur Yörük',
     author_email='uguryoruk24@gmail.com',
     classifiers=[
@@ -26,7 +26,7 @@ setup(
         'Framework :: Django :: 1.10',
         'Framework :: Django :: 1.11',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        "License :: OSI Approved :: MIT License",
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
