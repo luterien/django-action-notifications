@@ -1,17 +1,13 @@
 
 
-BASIC = "basic"
-NO_TARGET = "no_target"
-
-
 default_formats = {
 
-	"default": {
+    "default": {
 
-		BASIC : "%(actor)s %(verb)s %(action)s on %(target)s",
-		NO_TARGET : "%(actor)s %(verb)s %(action)s"
-		
-	}
+        "basic" : "%(actor)s %(verb)s %(action)s on %(target)s",
+        "no_target" : "%(actor)s %(verb)s %(action)s"
+        
+    }
 
 }
 

@@ -4,12 +4,12 @@ from constants import default_formats
 
 
 try:
-	NOTIFICATION_FORMATS = settings.NOTIFICATIONS["formats"]
+    NOTIFICATION_FORMATS = settings.NOTIFICATIONS["formats"]
 except AttributeError:
-	NOTIFICATION_FORMATS = default_formats["default"]
+    NOTIFICATION_FORMATS = default_formats["default"]
 
 try:
-	NOTIFY_ON_ACTION = settings.NOTIFICATIONS["notify_on_action"]
+    NOTIFY_ON_ACTION = settings.NOTIFICATIONS["notify_on_action"]
 except AttributeError:
-	NOTIFY_ON_ACTION = True
+    NOTIFY_ON_ACTION = True
 

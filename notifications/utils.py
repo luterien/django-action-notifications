@@ -1,8 +1,6 @@
 
 import settings as app_settings
 
-from constants import BASIC, NO_TARGET
-
 
 available_backends = ["database",]
 
@@ -14,9 +12,9 @@ def get_format(action):
 
     """
     if action.target:
-        return app_settings.NOTIFICATION_FORMATS[BASIC]
+        return app_settings.NOTIFICATION_FORMATS["basic"]
 
-    return app_settings.NOTIFICATION_FORMATS[NO_TARGET]
+    return app_settings.NOTIFICATION_FORMATS["no_target"]
 
 
 def send_notification_from_action(action, recepients):
