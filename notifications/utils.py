@@ -8,28 +8,28 @@ available_backends = ["database",]
 
 
 def get_format(action):
-	"""
+    """
 
-		find the suitable display format for the given action instance
+        find the suitable display format for the given action instance
 
-	"""
-	if action.target:
-		return app_settings.NOTIFICATION_FORMATS[BASIC]
+    """
+    if action.target:
+        return app_settings.NOTIFICATION_FORMATS[BASIC]
 
-	return app_settings.NOTIFICATION_FORMATS[NO_TARGET]
+    return app_settings.NOTIFICATION_FORMATS[NO_TARGET]
 
 
 def send_notification_from_action(action, recepients):
-	
-	from models import Notification
+    
+    from models import Notification
 
-	for recepient in recepients:
+    for recepient in recepients:
 
-		Notification.objects.create()
+        Notification.objects.create()
 
 
 def _get_backend():
-	pass
+    pass
 
 
 

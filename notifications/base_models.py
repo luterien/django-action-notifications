@@ -12,7 +12,7 @@ from utils import get_format
 
 class BaseAction(models.Model):
 
-	# Actor
+    # Actor
     actor_content_type = models.ForeignKey(ContentType, 
         related_name="%(app_label)s_%(class)s_actor_type")
     
@@ -40,12 +40,12 @@ class BaseAction(models.Model):
     objects = GenericManager()
 
     class Meta:
-    	abstract = True
-    	ordering = ("-date_created",)
+        abstract = True
+        ordering = ("-date_created",)
 
     def __str__(self):
 
-    	dx = {
+        dx = {
             'actor': self.actor,
             'verb': self.verb,
             'action': self.action_object,
@@ -54,5 +54,5 @@ class BaseAction(models.Model):
 
         display_format = get_format(self)
 
-    	return display_format % dx
+        return display_format % dx
 
