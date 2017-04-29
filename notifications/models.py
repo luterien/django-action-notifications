@@ -3,7 +3,10 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
+from consumers import _send_notification_to_socket
 from base_models import BaseAction
 
 
@@ -37,6 +40,48 @@ class Notification(BaseAction):
     recipient = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='notifications')
 
     is_seen = models.BooleanField(default=False)
+
+    def unread_for_recipient(self):
+        return self.recipient.notifications.filter(is_seen=False).count()
+
+
+@receiver(post_save, sender=Notification)
+def send_live_notification(sender, instance, **kwargs):
+    _send_notification_to_socket(instance.unread_for_recipient())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
