@@ -1,4 +1,4 @@
-import settings as app_settings
+import notifications.settings as app_settings
 
 from .utils import send_notification_from_action
 from .models import Action, Notification
