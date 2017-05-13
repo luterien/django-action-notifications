@@ -3,11 +3,10 @@ from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils.translation import ugettext as _
-from django.utils.encoding import smart_unicode
 from django.utils import timezone
 
-from managers import GenericManager
-from utils import get_format
+from .managers import GenericManager
+from .utils import get_format
 
 
 class BaseAction(models.Model):

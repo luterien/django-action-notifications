@@ -6,8 +6,8 @@ from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-from consumers import _send_notification_to_socket
-from base_models import BaseAction
+from .consumers import _send_notification_to_socket
+from .base_models import BaseAction
 
 
 class Action(BaseAction):

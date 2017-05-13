@@ -1,7 +1,7 @@
 import settings as app_settings
 
-from utils import send_notification_from_action
-from models import Action, Notification
+from .utils import send_notification_from_action
+from .models import Action, Notification
 
 
 def create_action(actor, action, verb, target=None):

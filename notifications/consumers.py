@@ -17,7 +17,6 @@ def ws_connect(message):
 
 
 def _send_notification_to_socket(notification_data):
-	print "sending data"
 	Group("notifications").send({
 			"text": json.dumps(notification_data)
 		})

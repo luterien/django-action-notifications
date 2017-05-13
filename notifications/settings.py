@@ -1,6 +1,6 @@
 from django.conf import settings
 
-from constants import default_formats
+from .constants import default_formats
 
 
 try:

@@ -1,5 +1,5 @@
 
-import settings as app_settings
+import notifications.settings as app_settings
 
 
 available_backends = ["database",]
